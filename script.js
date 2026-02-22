@@ -1,8 +1,29 @@
 
+let interviewList = [];
+let rejectedList = [];
+
+let totalCount = document.getElementById('total-count');
+let interviewCount = document.getElementById('interview-count');
+let rejectedCount = document.getElementById('rejected-count');
+
+const allJobsCard = document.getElementById('all-available-jobs');
+const mainContainer = document.querySelector('main');
+// console.log(mainContainer);
+
+function calculateCount() {
+    totalCount.innerText = allJobsCard.children.length;
+    interviewCount.innerText = interviewList.length;
+    rejectedCount.innerText = rejectedList.length;
+}
+calculateCount();
+
+
 
 const btnAllFilter = document.getElementById('btn-all-filter');
 const btnInterviewFilter = document.getElementById('btn-interview-filter');
 const btnRejectedFilter = document.getElementById('btn-rejected-filter');
+
+
 
 function toggleBtnStyle(id) {
     // console.log('all btn click', id);
@@ -21,4 +42,8 @@ function toggleBtnStyle(id) {
 
 
 }
+
+mainContainer.addEventListener('click', function (event) {
+
+})
 
