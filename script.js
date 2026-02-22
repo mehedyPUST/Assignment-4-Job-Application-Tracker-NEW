@@ -1,0 +1,24 @@
+
+
+const btnAllFilter = document.getElementById('btn-all-filter');
+const btnInterviewFilter = document.getElementById('btn-interview-filter');
+const btnRejectedFilter = document.getElementById('btn-rejected-filter');
+
+function toggleBtnStyle(id) {
+    // console.log('all btn click', id);
+    btnAllFilter.classList.remove('bg-blue-500', 'text-white');
+    btnInterviewFilter.classList.remove('bg-blue-500', 'text-white');
+    btnRejectedFilter.classList.remove('bg-blue-500', 'text-white');
+
+    btnAllFilter.classList.add('bg-gray-200', 'text-gray-800');
+    btnInterviewFilter.classList.add('bg-gray-200', 'text-gray-800');
+    btnRejectedFilter.classList.add('bg-gray-200', 'text-gray-800');
+
+
+    const clicked = document.getElementById(id);
+    clicked.classList.remove('bg-gray-200', 'text-gray-800');
+    clicked.classList.add('bg-blue-500', 'text-white');
+
+
+}
+
