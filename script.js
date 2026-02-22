@@ -77,6 +77,7 @@ mainContainer.addEventListener('click', function (event) {
 
         if (btnInterviewFilter.classList.contains('bg-blue-500')) {
             renderInterview();
+
         }
     }
 
@@ -116,7 +117,15 @@ mainContainer.addEventListener('click', function (event) {
 function renderInterview() {
     filteredJobList.innerHTML = '';
     if (interviewList.length === 0) {
-        filteredJobList.innerHTML = '<p class="text-center text-gray-500 py-8">No interview jobs yet</p>';
+        filteredJobList.innerHTML = `
+        <div class="text-center  py-8">
+        <h2 class="text-8xl text-blue-500"> <i class="fa-regular fa-file-lines"></i> </h2>
+        <br>
+        <p class="text-4xl font-bold"> No Jobs for Interview </p>
+        <br>
+        <p> Check back soon for new job opportunities</p>
+        </div>
+        `;
         return;
     }
 
@@ -148,7 +157,15 @@ function renderInterview() {
 function renderRejected() {
     filteredJobList.innerHTML = '';
     if (rejectedList.length === 0) {
-        filteredJobList.innerHTML = '<p class="text-center text-gray-500 py-8">No rejected jobs yet</p>';
+        filteredJobList.innerHTML = `
+         <div class="text-center  py-8">
+        <h2 class="text-8xl text-blue-500"> <i class="fa-regular fa-file-lines"></i> </h2>
+        <br>
+        <p class="text-4xl font-bold"> No Jobs Rejected </p>
+        <br>
+        <p> Check back soon for new job opportunities</p>
+        </div>
+        `;
         return;
     }
 
