@@ -56,8 +56,8 @@ function toggleBtnStyle(id) {
 mainContainer.addEventListener('click', function (event) {
 
 
-    console.log(event.target.parentNode.parentNode);
-    console.log(event.target.classList.contains('btn-interview'));
+    // console.log(event.target.parentNode.parentNode);
+    // console.log(event.target.classList.contains('btn-interview'));
 
     if (event.target.classList.contains('btn-interview')) {
         const parentNode = event.target.parentNode.parentNode;
@@ -83,6 +83,7 @@ mainContainer.addEventListener('click', function (event) {
         if (!jobProviderExist) {
             interviewList.push(cardInfo);
         }
+        calculateCount();
         renderInterview();
     }
 
@@ -100,13 +101,13 @@ function renderInterview() {
 
 
     for (let interview of interviewList) {
-        console.log(interview);
+        // console.log(interview);
         let div = document.createElement('div');
         div.className = 'flex justify-between p-4 border border-blue-200 bg-gray-50 rounded-sm';
         div.innerHTML = `
         <div class="space-y-2">
                     <h2 class="job-provider text-[18px] font-semibold">${interview.jobProvider}</h2>
-                    <p class="job-title text-[#64748B]">${jobTitle}</p>
+                    <p class="job-title text-[#64748B]">${interview.jobTitle}</p>
                     <br>
                     <p class="location-type-salary text-[#64748B]">${interview.locationTypeSalary}</p>
                     <br>
@@ -121,6 +122,11 @@ function renderInterview() {
                             class=" btn-rejected  py-2 px-4 w-30 rounded-sm  font-bold text-[#EF4444] border-2 border-[#EF4444]">REJECTED</button>
                     </div>
                 </div>
+                 <div>
+                    <button class=" bg-white p-1  rounded-sm text-red-500 border border-[#EF4444]"><i
+                            class="fa-regular fa-trash-can"></i></button>
+                </div>
+
                 `
         filteredJobList.appendChild(div);
     }
