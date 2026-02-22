@@ -2,6 +2,7 @@ let interviewList = [];
 let rejectedList = [];
 
 let totalCount = document.getElementById('total-count');
+let pageLandTotalCount = document.getElementById('page-land-total');
 let interviewCount = document.getElementById('interview-count');
 let rejectedCount = document.getElementById('rejected-count');
 
@@ -13,6 +14,8 @@ function calculateCount() {
     totalCount.innerText = allJobsCard.children.length;
     interviewCount.innerText = interviewList.length;
     rejectedCount.innerText = rejectedList.length;
+    pageLandTotalCount.innerText = allJobsCard.children.length;
+
 }
 calculateCount();
 
@@ -193,3 +196,19 @@ function renderRejected() {
         filteredJobList.appendChild(div);
     }
 }
+
+
+document.getElementById('btn-interview-filter').addEventListener('click', function () {
+    let interViewJobCounter = document.getElementById('available-jobs-count');
+    interViewJobCounter.innerHTML = `<p><span>${interviewCount.innerText} of </span> <span>${totalCount.innerText} Jobs</span></p>`
+});
+
+document.getElementById('btn-rejected-filter').addEventListener('click', function () {
+    let rejectedJobCounter = document.getElementById('available-jobs-count');
+    rejectedJobCounter.innerHTML = `<p><span>${rejectedCount.innerText} of </span> <span>${totalCount.innerText}   Jobs</span></p>`
+});
+
+document.getElementById('btn-all-filter').addEventListener('click', function () {
+    let allJobCounter = document.getElementById('available-jobs-count');
+    allJobCounter.innerHTML = `<p><span>${totalCount.innerText} Jobs</span></p>`
+});
