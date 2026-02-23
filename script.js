@@ -316,7 +316,7 @@ function renderInterview() {
         div.innerHTML = `
         <div class="flex justify-between">
             <h2 class="job-provider text-[18px] font-semibold">${interview.jobProvider}</h2>
-            <button class="btn-delete bg-white p-1 rounded-sm text-red-500 border border-[#EF4444]"><i class="fa-regular fa-trash-can"></i></button>
+            <button class="btn-delete  cursor-pointer bg-white p-1 rounded-sm text-red-500 border border-[#EF4444]"><i class="fa-regular fa-trash-can"></i></button>
         </div>
         <div class="space-y-2">
             <p class="job-title text-[#64748B]">${interview.jobTitle}</p>
@@ -354,7 +354,7 @@ function renderRejected() {
         div.innerHTML = `
         <div class="flex justify-between">
             <h2 class="job-provider text-[18px] font-semibold">${rejected.jobProvider}</h2>
-            <button class="btn-delete bg-white p-1 rounded-sm text-red-500 border border-[#EF4444]"><i class="fa-regular fa-trash-can"></i></button>
+            <button class="btn-delete cursor-pointer bg-white p-1 rounded-sm text-red-500 border border-[#EF4444]"><i class="fa-regular fa-trash-can"></i></button>
         </div>
         <div class="space-y-2">
             <p class="job-title text-[#64748B]">${rejected.jobTitle}</p>
