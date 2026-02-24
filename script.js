@@ -273,7 +273,7 @@ function renderInterview() {
 
     if (interviewList.length === 0) {
         filteredJobList.innerHTML = `
-        <div class="text-center p-10 md:p-25 border-2 border-purple-700 rounded-xl md:mt-10">
+        <div class="text-center p-10 md:p-25 border-2 border-green-700 rounded-xl md:mt-10">
             <h2 class="text-8xl text-blue-500"><i class="fa-regular fa-file-lines"></i></h2>
             <br>
             <p class="text-4xl font-bold">No Jobs for Interview</p>
@@ -312,7 +312,7 @@ function renderRejected() {
 
     if (rejectedList.length === 0) {
         filteredJobList.innerHTML = `
-        <div class="text-center p-10 md:p-25 border-2 border-purple-700 rounded-xl md:mt-10">
+        <div class="text-center p-10 md:p-25 border-2 border-red-700 rounded-xl md:mt-10">
             <h2 class="text-8xl text-blue-500"><i class="fa-regular fa-file-lines"></i></h2>
             <br>
             <p class="text-4xl font-bold">No Jobs Rejected</p>
