@@ -11,6 +11,16 @@ const allJobsEmptyMessage = document.getElementById('all-jobs-empty-message');
 const mainContainer = document.querySelector('main');
 const filteredJobList = document.getElementById('filtered-job-list');
 
+const btnAllFilter = document.getElementById('btn-all-filter');
+const btnInterviewFilter = document.getElementById('btn-interview-filter');
+const btnRejectedFilter = document.getElementById('btn-rejected-filter');
+
+// Set initial active state for All button
+btnAllFilter.classList.remove('bg-gray-200', 'text-gray-800');
+btnAllFilter.classList.add('bg-blue-500', 'text-white', 'active-tab');
+btnInterviewFilter.classList.add('bg-gray-200', 'text-gray-800');
+btnRejectedFilter.classList.add('bg-gray-200', 'text-gray-800');
+
 function calculateCount() {
     totalCount.innerText = allJobsCard.children.length;
     interviewCount.innerText = interviewList.length;
@@ -28,10 +38,6 @@ function checkAllJobsEmptyState() {
     }
 }
 
-const btnAllFilter = document.getElementById('btn-all-filter');
-const btnInterviewFilter = document.getElementById('btn-interview-filter');
-const btnRejectedFilter = document.getElementById('btn-rejected-filter');
-
 function toggleBtnStyle(id) {
     btnAllFilter.classList.remove('bg-blue-500', 'text-white', 'active-tab');
     btnInterviewFilter.classList.remove('bg-blue-500', 'text-white', 'active-tab');
@@ -45,17 +51,17 @@ function toggleBtnStyle(id) {
     clicked.classList.remove('bg-gray-200', 'text-gray-800');
     clicked.classList.add('bg-blue-500', 'text-white', 'active-tab');
 
-    if (id == 'btn-interview-filter') {
+    if (id === 'btn-interview-filter') {
         allJobsCard.classList.add('hidden');
         allJobsEmptyMessage.classList.add('hidden');
         filteredJobList.classList.remove('hidden');
         renderInterview();
-    } else if (id == 'btn-rejected-filter') {
+    } else if (id === 'btn-rejected-filter') {
         allJobsCard.classList.add('hidden');
         allJobsEmptyMessage.classList.add('hidden');
         filteredJobList.classList.remove('hidden');
         renderRejected();
-    } else if (id == 'btn-all-filter') {
+    } else if (id === 'btn-all-filter') {
         allJobsCard.classList.remove('hidden');
         filteredJobList.classList.add('hidden');
         checkAllJobsEmptyState();
@@ -192,13 +198,19 @@ mainContainer.addEventListener('click', function (event) {
 
     } else if (event.target.classList.contains('btn-delete') || event.target.classList.contains('fa-trash-can')) {
         const deleteButton = event.target.closest('button');
-        if (!deleteButton) return;
+        if (!deleteButton) {
+            return;
+        }
 
         const jobCard = deleteButton.closest('.job-container');
-        if (!jobCard) return;
+        if (!jobCard) {
+            return;
+        }
 
         const jobProviderElement = jobCard.querySelector('.job-provider');
-        if (!jobProviderElement) return;
+        if (!jobProviderElement) {
+            return;
+        }
 
         const jobProvider = jobProviderElement.innerText;
 
@@ -335,17 +347,17 @@ function renderRejected() {
 }
 
 // Filter button click handlers
-document.getElementById('btn-all-filter').addEventListener('click', function () {
+btnAllFilter.addEventListener('click', function () {
     toggleBtnStyle('btn-all-filter');
     updateAvailableJobsCount();
 });
 
-document.getElementById('btn-interview-filter').addEventListener('click', function () {
+btnInterviewFilter.addEventListener('click', function () {
     toggleBtnStyle('btn-interview-filter');
     updateAvailableJobsCount();
 });
 
-document.getElementById('btn-rejected-filter').addEventListener('click', function () {
+btnRejectedFilter.addEventListener('click', function () {
     toggleBtnStyle('btn-rejected-filter');
     updateAvailableJobsCount();
 });
