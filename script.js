@@ -145,12 +145,17 @@ mainContainer.addEventListener('click', function (event) {
         // Update status in main card
         for (let card of allJobsCard.children) {
             const providerElement = card.querySelector('.job-provider');
-            if (providerElement && providerElement.innerText === jobProvider) {
-                const statusDiv = card.querySelector('.job-status');
-                if (statusDiv) {
-                    statusDiv.innerHTML = '<p class="bg-green-100 text-[#10B981] font-medium py-2 px-4 w-35 rounded-sm">INTERVIEW</p>';
+
+            if (providerElement) {
+                if (providerElement.innerText === jobProvider) {
+                    const statusDiv = card.querySelector('.job-status');
+
+                    if (statusDiv) {
+                        statusDiv.innerHTML = '<p class="bg-green-100 text-[#10B981] font-medium py-2 px-4 w-35 rounded-sm">INTERVIEW</p>';
+                    }
+
+                    break;
                 }
-                break;
             }
         }
 
@@ -229,12 +234,17 @@ mainContainer.addEventListener('click', function (event) {
         // Update status in main card
         for (let card of allJobsCard.children) {
             const providerElement = card.querySelector('.job-provider');
-            if (providerElement && providerElement.innerText === jobProvider) {
-                const statusDiv = card.querySelector('.job-status');
-                if (statusDiv) {
-                    statusDiv.innerHTML = '<p class="bg-red-100 text-[#EF4444] font-medium py-2 px-4 w-35 rounded-sm">REJECTED</p>';
+
+            if (providerElement) {
+                if (providerElement.innerText === jobProvider) {
+                    const statusDiv = card.querySelector('.job-status');
+
+                    if (statusDiv) {
+                        statusDiv.innerHTML = '<p class="bg-red-100 text-[#EF4444] font-medium py-2 px-4 w-35 rounded-sm">REJECTED</p>';
+                    }
+
+                    break;
                 }
-                break;
             }
         }
 
@@ -293,7 +303,12 @@ mainContainer.addEventListener('click', function (event) {
         // Remove from main card
         for (let card of allJobsCard.children) {
             const providerElement = card.querySelector('.job-provider');
-            if (providerElement && providerElement.innerText === jobProvider) {
+            let provider = '';
+            if (providerElement) {
+                provider = providerElement.innerText;
+            }
+
+            if (provider === jobProvider) {
                 card.remove();
                 break;
             }
