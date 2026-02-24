@@ -78,11 +78,11 @@ Cleaner Coding means the code looks simple. I don’t have to write many event l
 Example: Instead of adding click handlers to 100 list items individually, I add one handler to the parent `<ul>` and check which `<li>` was clicked using ```event.target```.
 
 
-## 5. What is the difference between preventDefault() and stopPropagation() methods?
+## 5. What is the difference between ```preventDefault()``` and ```stopPropagation()``` methods?
 
-Difference between preventDefault() and stopPropagation()
+Difference between ```preventDefault()``` and ```stopPropagation()```
 
-preventDefault() mean stop normal browser work.
+```preventDefault()``` mean stop normal browser work.
 But event still go up in DOM.
 
 Example:
@@ -93,21 +93,21 @@ Example:
 
 - Checkbox not change
 
-stopPropagation() mean stop event going parent or child.
+```stopPropagation()``` mean stop event going parent or child.
 But browser normal work still happen.
 
 Main difference:
 
-- preventDefault() stop browser action.
+- ```preventDefault()``` stop browser action.
 
-- stopPropagation() stop event moving.
+- ```stopPropagation()``` stop event moving.
 
-preventDefault() stop browser work.
+```preventDefault()``` stop browser work.
 
-stopPropagation() stop event go parent.
+```stopPropagation()``` stop event go parent.
 
 We can use one or both together depend on need.
 
 Example:
-If I use preventDefault() on link, link not open.
-If I use stopPropagation() on button inside div, click not go to div.
+If I use ```preventDefault()``` on link, link not open.
+If I use ```stopPropagation()``` on button inside div, click not go to div.
