@@ -115,7 +115,7 @@ mainContainer.addEventListener('click', function (event) {
         // Update status in main card
         for (let card of allJobsCard.children) {
             const providerElement = card.querySelector('.job-provider');
-            if (providerElement?.innerText === jobProvider) {
+            if (providerElement.innerText === jobProvider) {
                 const statusDiv = card.querySelector('.job-status');
                 if (statusDiv) {
                     statusDiv.innerHTML = '<p class="bg-green-100 text-[#10B981] font-medium py-2 px-4 w-35 rounded-sm">INTERVIEW</p>';
@@ -172,7 +172,7 @@ mainContainer.addEventListener('click', function (event) {
         // Update status in main card
         for (let card of allJobsCard.children) {
             const providerElement = card.querySelector('.job-provider');
-            if (providerElement?.innerText === jobProvider) {
+            if (providerElement.innerText === jobProvider) {
                 const statusDiv = card.querySelector('.job-status');
                 if (statusDiv) {
                     statusDiv.innerHTML = '<p class="bg-red-100 text-[#EF4444] font-medium py-2 px-4 w-35 rounded-sm">REJECTED</p>';
@@ -192,12 +192,15 @@ mainContainer.addEventListener('click', function (event) {
 
     } else if (event.target.classList.contains('btn-delete') || event.target.classList.contains('fa-trash-can')) {
         const deleteButton = event.target.closest('button');
-        const jobCard = deleteButton?.closest('.job-container');
+        if (!deleteButton) return;
+
+        const jobCard = deleteButton.closest('.job-container');
         if (!jobCard) return;
 
         const jobProviderElement = jobCard.querySelector('.job-provider');
-        const jobProvider = jobProviderElement?.innerText;
-        if (!jobProvider) return;
+        if (!jobProviderElement) return;
+
+        const jobProvider = jobProviderElement.innerText;
 
         // Remove from filtered view if active
         if (!filteredJobList.classList.contains('hidden')) {
@@ -225,7 +228,7 @@ mainContainer.addEventListener('click', function (event) {
         // Remove from main card
         for (let card of allJobsCard.children) {
             const providerElement = card.querySelector('.job-provider');
-            if (providerElement?.innerText === jobProvider) {
+            if (providerElement.innerText === jobProvider) {
                 card.remove();
                 break;
             }
