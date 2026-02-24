@@ -78,46 +78,26 @@ function updateAvailableJobsCount() {
     }
 }
 
+
+
 mainContainer.addEventListener('click', function (event) {
     if (event.target.classList.contains('btn-interview')) {
-        const jobCard = event.target.closest('.job-container');
-        if (!jobCard) {
-            return;
-        }
-
-        const jobProviderElement = jobCard.querySelector('.job-provider');
-        let jobProvider = '';
-        if (jobProviderElement) {
-            jobProvider = jobProviderElement.innerText;
-        }
-
-        const jobTitleElement = jobCard.querySelector('.job-title');
-        let jobTitle = '';
-        if (jobTitleElement) {
-            jobTitle = jobTitleElement.innerText;
-        }
-
-        const locationTypeSalaryElement = jobCard.querySelector('.location-type-salary');
-        let locationTypeSalary = '';
-        if (locationTypeSalaryElement) {
-            locationTypeSalary = locationTypeSalaryElement.innerText;
-        }
-
-        const jobDetailsElement = jobCard.querySelector('.job-details');
-        let jobDetails = '';
-        if (jobDetailsElement) {
-            jobDetails = jobDetailsElement.innerText;
-        }
-
-        if (!jobProvider) {
-            return;
-        }
+        const parentNode = event.target.parentNode.parentNode.parentNode;
+        // console.log(parentNode);
+        const jobProvider = parentNode.querySelector('.job-provider').innerText;
+        // console.log(jobProvider);
+        const jobTitle = parentNode.querySelector('.job-title').innerText;
+        // console.log(jobTitle);
+        const locationTypeSalary = parentNode.querySelector('.location-type-salary').innerText;
+        // console.log(locationTypeSalary);
+        const jobDetails = parentNode.querySelector('.job-details').innerText;
+        // console.log(jobDetails);
 
         const cardInfo = {
-            jobProvider: jobProvider,
-            jobTitle: jobTitle,
-            locationTypeSalary: locationTypeSalary,
-            jobDetails: jobDetails
+            jobProvider,
+            jobTitle,
+            locationTypeSalary,
+            jobDetails,
         };
 
         // Remove from rejected list
@@ -168,45 +148,25 @@ mainContainer.addEventListener('click', function (event) {
             renderRejected();
         }
 
+
+
     } else if (event.target.classList.contains('btn-rejected')) {
-        const jobCard = event.target.closest('.job-container');
-        if (!jobCard) {
-            return;
-        }
-
-        const jobProviderElement = jobCard.querySelector('.job-provider');
-        let jobProvider = '';
-        if (jobProviderElement) {
-            jobProvider = jobProviderElement.innerText;
-        }
-
-        const jobTitleElement = jobCard.querySelector('.job-title');
-        let jobTitle = '';
-        if (jobTitleElement) {
-            jobTitle = jobTitleElement.innerText;
-        }
-
-        const locationTypeSalaryElement = jobCard.querySelector('.location-type-salary');
-        let locationTypeSalary = '';
-        if (locationTypeSalaryElement) {
-            locationTypeSalary = locationTypeSalaryElement.innerText;
-        }
-
-        const jobDetailsElement = jobCard.querySelector('.job-details');
-        let jobDetails = '';
-        if (jobDetailsElement) {
-            jobDetails = jobDetailsElement.innerText;
-        }
-
-        if (!jobProvider) {
-            return;
-        }
+        const parentNode = event.target.parentNode.parentNode.parentNode;
+        // console.log(parentNode);
+        const jobProvider = parentNode.querySelector('.job-provider').innerText;
+        // console.log(jobProvider);
+        const jobTitle = parentNode.querySelector('.job-title').innerText;
+        // console.log(jobTitle);
+        const locationTypeSalary = parentNode.querySelector('.location-type-salary').innerText;
+        // console.log(locationTypeSalary);
+        const jobDetails = parentNode.querySelector('.job-details').innerText;
+        // console.log(jobDetails);
 
         const cardInfo = {
-            jobProvider: jobProvider,
-            jobTitle: jobTitle,
-            locationTypeSalary: locationTypeSalary,
-            jobDetails: jobDetails
+            jobProvider,
+            jobTitle,
+            locationTypeSalary,
+            jobDetails,
         };
 
         // Remove from interview list
@@ -296,7 +256,9 @@ mainContainer.addEventListener('click', function (event) {
                     }
                 }
                 rejectedList = newRejectedList;
+
                 renderRejected();
+
             }
         }
 
