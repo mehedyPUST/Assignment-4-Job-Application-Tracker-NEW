@@ -142,7 +142,7 @@ mainContainer.addEventListener('click', function (event) {
             if (providerElement.innerText === jobProvider) {
                 const statusDiv = card.querySelector('.job-status');
                 if (statusDiv) {
-                    statusDiv.innerHTML = '<p class="bg-green-100 text-[#10B981] font-medium py-2 px-4 w-35 rounded-sm">INTERVIEW</p>';
+                    statusDiv.innerHTML = `<p class="bg-green-100 text-center border border-green-600 text-green-500 font-medium py-2 px-4 w-35 rounded-sm">INTERVIEW</p>`;
                 }
                 break;
             }
@@ -201,7 +201,7 @@ mainContainer.addEventListener('click', function (event) {
             if (providerElement.innerText === jobProvider) {
                 const statusDiv = card.querySelector('.job-status');
                 if (statusDiv) {
-                    statusDiv.innerHTML = '<p class="bg-red-100 text-[#EF4444] font-medium py-2 px-4 w-35 rounded-sm">REJECTED</p>';
+                    statusDiv.innerHTML = `<p class="bg-red-100 text-center border border-red-600 text-red-500 font-medium py-2 px-4 w-35 rounded-sm">REJECTED</p>`;
                 }
                 break;
             }
@@ -322,7 +322,7 @@ function renderInterview() {
             <br>
             <p class="location-type-salary text-[#64748B]">${interview.locationTypeSalary}</p>
             <br>
-            <p class="bg-green-100 text-[#10B981] font-medium py-2 px-4 w-35 rounded-sm">INTERVIEW</p>
+            <p class="bg-green-100 text-center border border-green-600 text-green-500 font-medium py-2 px-4 w-35 rounded-sm">INTERVIEW</p>
             <p class="job-details text-justify">${interview.jobDetails}</p>
             <div class="flex gap-4">
                 <button class="btn-interview p-2 w-25 md:w-30 rounded-sm md:font-bold text-[#10B981] border md:border-2 border-[#10B981] hover:-translate-y-1 hover:shadow-lg transition-all duration-300">INTERVIEW</button>
@@ -363,7 +363,7 @@ function renderRejected() {
             <br>
             <p class="location-type-salary text-[#64748B]">${rejected.locationTypeSalary}</p>
             <br>
-            <p class="bg-red-100 text-[#EF4444] font-medium py-2 px-4 w-35 rounded-sm">REJECTED</p>
+            <p class="bg-red-100 text-center border border-red-600 text-red-500 font-medium py-2 px-4 w-35 rounded-sm">INTERVIEW</p>
             <p class="job-details text-justify">${rejected.jobDetails}</p>
             <div class="flex gap-4">
                 <button class="btn-interview p-2 w-25 md:w-30 rounded-sm md:font-bold text-[#10B981] border md:border-2 border-[#10B981] hover:-translate-y-1 hover:shadow-lg transition-all duration-300">INTERVIEW</button>
