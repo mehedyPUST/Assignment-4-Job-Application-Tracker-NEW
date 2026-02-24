@@ -54,10 +54,14 @@ Then the div containing it
 
 Then any parent elements above it
 
-This happens automatically unless I stop the propagation by using - element.addEventListener('click', function(event) {
-    event.stopPropagation();
-    // codes 
+This happens automatically unless I stop the propagation by using
+
+
+```js
+element.addEventListener('click', function(event) { event.stopPropagation(); 
+// codes 
 });
+```
 
 ## 4. What is Event Delegation in JavaScript? Why is it useful?
 
