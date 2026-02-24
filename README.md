@@ -13,9 +13,9 @@ querySelectorAll returns a static NodeList of all elements matching any CSS sele
 
 2. 
 Ans:
-These Lines are commented because it creates something odd in GitHub
 
-<!-- 
+
+
 <!DOCTYPE html>
 <html>
 
@@ -47,7 +47,7 @@ These Lines are commented because it creates something odd in GitHub
     </script>
 </body>
 
-</html>" -->
+</html>"
 
 3. What is Event Bubbling? And how does it work?
 
