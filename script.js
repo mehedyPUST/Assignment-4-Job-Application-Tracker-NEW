@@ -42,10 +42,8 @@ function toggleBtnStyle(id) {
     btnRejectedFilter.classList.add('bg-gray-200', 'text-gray-800');
 
     const clicked = document.getElementById(id);
-    if (clicked) {
-        clicked.classList.remove('bg-gray-200', 'text-gray-800');
-        clicked.classList.add('bg-blue-500', 'text-white', 'active-tab');
-    }
+    clicked.classList.remove('bg-gray-200', 'text-gray-800');
+    clicked.classList.add('bg-blue-500', 'text-white', 'active-tab');
 
     if (id == 'btn-interview-filter') {
         allJobsCard.classList.add('hidden');
@@ -64,7 +62,6 @@ function toggleBtnStyle(id) {
     }
 }
 
-
 function updateAvailableJobsCount() {
     const counterElement = document.getElementById('available-jobs-count');
     const total = totalCount.innerText;
@@ -78,20 +75,13 @@ function updateAvailableJobsCount() {
     }
 }
 
-
-
 mainContainer.addEventListener('click', function (event) {
     if (event.target.classList.contains('btn-interview')) {
         const parentNode = event.target.parentNode.parentNode.parentNode;
-        // console.log(parentNode);
         const jobProvider = parentNode.querySelector('.job-provider').innerText;
-        // console.log(jobProvider);
         const jobTitle = parentNode.querySelector('.job-title').innerText;
-        // console.log(jobTitle);
         const locationTypeSalary = parentNode.querySelector('.location-type-salary').innerText;
-        // console.log(locationTypeSalary);
         const jobDetails = parentNode.querySelector('.job-details').innerText;
-        // console.log(jobDetails);
 
         const cardInfo = {
             jobProvider,
@@ -125,17 +115,12 @@ mainContainer.addEventListener('click', function (event) {
         // Update status in main card
         for (let card of allJobsCard.children) {
             const providerElement = card.querySelector('.job-provider');
-
-            if (providerElement) {
-                if (providerElement.innerText === jobProvider) {
-                    const statusDiv = card.querySelector('.job-status');
-
-                    if (statusDiv) {
-                        statusDiv.innerHTML = '<p class="bg-green-100 text-[#10B981] font-medium py-2 px-4 w-35 rounded-sm">INTERVIEW</p>';
-                    }
-
-                    break;
+            if (providerElement?.innerText === jobProvider) {
+                const statusDiv = card.querySelector('.job-status');
+                if (statusDiv) {
+                    statusDiv.innerHTML = '<p class="bg-green-100 text-[#10B981] font-medium py-2 px-4 w-35 rounded-sm">INTERVIEW</p>';
                 }
+                break;
             }
         }
 
@@ -148,19 +133,12 @@ mainContainer.addEventListener('click', function (event) {
             renderRejected();
         }
 
-
-
     } else if (event.target.classList.contains('btn-rejected')) {
         const parentNode = event.target.parentNode.parentNode.parentNode;
-        // console.log(parentNode);
         const jobProvider = parentNode.querySelector('.job-provider').innerText;
-        // console.log(jobProvider);
         const jobTitle = parentNode.querySelector('.job-title').innerText;
-        // console.log(jobTitle);
         const locationTypeSalary = parentNode.querySelector('.location-type-salary').innerText;
-        // console.log(locationTypeSalary);
         const jobDetails = parentNode.querySelector('.job-details').innerText;
-        // console.log(jobDetails);
 
         const cardInfo = {
             jobProvider,
@@ -194,17 +172,12 @@ mainContainer.addEventListener('click', function (event) {
         // Update status in main card
         for (let card of allJobsCard.children) {
             const providerElement = card.querySelector('.job-provider');
-
-            if (providerElement) {
-                if (providerElement.innerText === jobProvider) {
-                    const statusDiv = card.querySelector('.job-status');
-
-                    if (statusDiv) {
-                        statusDiv.innerHTML = '<p class="bg-red-100 text-[#EF4444] font-medium py-2 px-4 w-35 rounded-sm">REJECTED</p>';
-                    }
-
-                    break;
+            if (providerElement?.innerText === jobProvider) {
+                const statusDiv = card.querySelector('.job-status');
+                if (statusDiv) {
+                    statusDiv.innerHTML = '<p class="bg-red-100 text-[#EF4444] font-medium py-2 px-4 w-35 rounded-sm">REJECTED</p>';
                 }
+                break;
             }
         }
 
@@ -219,23 +192,12 @@ mainContainer.addEventListener('click', function (event) {
 
     } else if (event.target.classList.contains('btn-delete') || event.target.classList.contains('fa-trash-can')) {
         const deleteButton = event.target.closest('button');
-        if (!deleteButton) {
-            return;
-        }
-
-        const jobCard = deleteButton.closest('.job-container');
-        if (!jobCard) {
-            return;
-        }
+        const jobCard = deleteButton?.closest('.job-container');
+        if (!jobCard) return;
 
         const jobProviderElement = jobCard.querySelector('.job-provider');
-        let jobProvider = '';
-        if (jobProviderElement) {
-            jobProvider = jobProviderElement.innerText;
-        }
-        if (!jobProvider) {
-            return;
-        }
+        const jobProvider = jobProviderElement?.innerText;
+        if (!jobProvider) return;
 
         // Remove from filtered view if active
         if (!filteredJobList.classList.contains('hidden')) {
@@ -256,21 +218,14 @@ mainContainer.addEventListener('click', function (event) {
                     }
                 }
                 rejectedList = newRejectedList;
-
                 renderRejected();
-
             }
         }
 
         // Remove from main card
         for (let card of allJobsCard.children) {
             const providerElement = card.querySelector('.job-provider');
-            let provider = '';
-            if (providerElement) {
-                provider = providerElement.innerText;
-            }
-
-            if (provider === jobProvider) {
+            if (providerElement?.innerText === jobProvider) {
                 card.remove();
                 break;
             }
@@ -391,5 +346,3 @@ document.getElementById('btn-rejected-filter').addEventListener('click', functio
     toggleBtnStyle('btn-rejected-filter');
     updateAvailableJobsCount();
 });
-
-updateAvailableJobsCount();
