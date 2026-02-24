@@ -110,4 +110,4 @@ We can use one or both together depend on need.
 
 Example:
 If I use ```preventDefault()``` on link, link not open.
-If I use ```stopPropagation()``` on button inside div, click not go to div.
+If I use ```stopPropagation()``` on `<button>` inside `<div>`, click not go to `<div>`.
