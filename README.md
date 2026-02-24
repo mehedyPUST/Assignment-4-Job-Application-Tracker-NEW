@@ -75,7 +75,7 @@ It handles Dynamic Content means it also work for new elements that I add later.
 
 Cleaner Coding means the code looks simple. I don’t have to write many event listeners in many places. Everything is handled in one place, so it is easier to read, change, and fix later.
 
-Example: Instead of adding click handlers to 100 list items individually, I add one handler to the parent ul and check which li was clicked using ```event.target```.
+Example: Instead of adding click handlers to 100 list items individually, I add one handler to the parent `<ul>` and check which `<li>` was clicked using ```event.target```.
 
 
 ## 5. What is the difference between preventDefault() and stopPropagation() methods?
