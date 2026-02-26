@@ -326,7 +326,7 @@ function renderInterview() {
             <p class="job-details text-justify">${interview.jobDetails}</p>
             <div class="flex gap-4">
                 <button class="btn-interview hover:bg-green-200 p-2 w-25 md:w-30 rounded-sm md:font-bold text-[#10B981] border md:border-2 border-[#10B981] hover:-translate-y-1 hover:shadow-lg transition-all duration-300">INTERVIEW</button>
-                <button class="btn-interview hover:bg-red-200 p-2 w-25 md:w-30 rounded-sm md:font-bold text-[#EF4444] border md:border-2 border-[#EF4444] hover:-translate-y-1 hover:shadow-lg transition-all duration-300">REJECTED</button>
+                <button class="btn-rejected hover:bg-red-200 p-2 w-25 md:w-30 rounded-sm md:font-bold text-[#EF4444] border md:border-2 border-[#EF4444] hover:-translate-y-1 hover:shadow-lg transition-all duration-300">REJECTED</button>
             </div>
         </div>`;
         filteredJobList.appendChild(newDiv);
@@ -367,7 +367,7 @@ function renderRejected() {
             <p class="job-details text-justify">${rejected.jobDetails}</p>
             <div class="flex gap-4">
                 <button class="btn-interview hover:bg-green-200 p-2 w-25 md:w-30 rounded-sm md:font-bold text-[#10B981] border md:border-2 border-[#10B981] hover:-translate-y-1 hover:shadow-lg transition-all duration-300">INTERVIEW</button>
-                <button class="btn-interview hover:bg-red-200 p-2 w-25 md:w-30 rounded-sm md:font-bold text-[#EF4444] border md:border-2 border-[#EF4444] hover:-translate-y-1 hover:shadow-lg transition-all duration-300">REJECTED</button>
+                <button class="btn-rejected hover:bg-red-200 p-2 w-25 md:w-30 rounded-sm md:font-bold text-[#EF4444] border md:border-2 border-[#EF4444] hover:-translate-y-1 hover:shadow-lg transition-all duration-300">REJECTED</button>
             </div>
         </div>`;
         filteredJobList.appendChild(newDiv);
