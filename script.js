@@ -349,3 +349,4 @@ btnRejectedFilter.addEventListener('click', function () {
 });
 
 calculateCount();
+toggleBtnStyle(id);
